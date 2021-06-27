@@ -7,6 +7,7 @@ import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 
+import co.com.ceiba.mobile.pruebadeingreso.R;
 import co.com.ceiba.mobile.pruebadeingreso.users.dto.User;
 import co.com.ceiba.mobile.pruebadeingreso.users.event.UserEvent;
 import co.com.ceiba.mobile.pruebadeingreso.users.model.UsersInteractor;
@@ -46,6 +47,30 @@ public class UsersPresenterClass implements UsersPresenter{
         }
     }
 
+    @Override
+    public void filterUsers(final String userName) {
+        ArrayList<User> users = new ArrayList<>();
+
+        if (!userName.isEmpty()){
+            for (User user: mUsers) {
+                if (user.getName().toUpperCase().contains(userName.toUpperCase())){
+                    users.add(user);
+                }
+            }
+
+            if (users.size() > 0){
+                mView.loadUsersFiltered(users);
+            }else{
+                mView.loadUsersFiltered(users);
+                mView.showSnackbar(R.string.list_is_empty);
+            }
+        }else{
+            mView.loadUsersFiltered(mUsers);
+        }
+
+
+    }
+
     @Subscribe
     public void onUserEventListener(UserEvent event){
         if (mView != null){
@@ -53,10 +78,11 @@ public class UsersPresenterClass implements UsersPresenter{
 
             switch (event.getTypeEvent()){
                 case Constants.SUCCESS:
-                    mView.loadUsers(event.getUsers());
+                    mUsers = event.getUsers();
+                    mView.loadUsers(mUsers);
                     break;
                 default:
-                    mView.showMessage(event.getMessage());
+                    mView.showMessage(R.string.generic_error);
                     break;
             }
         }

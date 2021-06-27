@@ -68,7 +68,7 @@ public class PostActivity extends Activity implements PostView{
         progressDialog = ProgressDialog.show(
                 PostActivity.this,
                 "",
-                "Loading...",
+                getString(R.string.generic_message_progress),
                 true,
                 false);
     }

@@ -6,4 +6,6 @@ public interface UsersPresenter {
     public void onCreate();
     public void onDestroy();
     public void getUsers();
+
+    void filterUsers(String userName);
 }

@@ -22,6 +22,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         this.mUserClickListener = onUserClickListener;
     }
 
+    public void updateItems(ArrayList<User> users){
+        this.mUsers = users;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

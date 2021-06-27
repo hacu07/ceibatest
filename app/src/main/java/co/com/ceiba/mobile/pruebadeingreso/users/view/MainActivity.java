@@ -4,8 +4,12 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,20 +27,21 @@ public class MainActivity extends Activity implements UsersView, OnUserClickList
     UsersPresenter mPresenter;
     RecyclerView recyclerViewSearchResults;
     UserAdapter mUserAdapter;
+    TextView editTextSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initView();
+        initViews();
 
         mPresenter = new UsersPresenterClass(this, this);
         mPresenter.onCreate();
         mPresenter.getUsers();
     }
 
-    private void initView() {
+    private void initViews() {
         recyclerViewSearchResults = findViewById(R.id.recyclerViewSearchResults);
         recyclerViewSearchResults.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -57,7 +62,7 @@ public class MainActivity extends Activity implements UsersView, OnUserClickList
         progressDialog = ProgressDialog.show(
                 MainActivity.this,
                 "",
-                "Loading...",
+                getString(R.string.generic_message_progress),
                 true,
                 false);
     }
@@ -73,9 +78,39 @@ public class MainActivity extends Activity implements UsersView, OnUserClickList
     }
 
     @Override
+    public void showSnackbar(int message) {
+        Snackbar.make(editTextSearch, getString(message), Snackbar.LENGTH_SHORT).show();
+    }
+
+    @Override
     public void loadUsers(ArrayList<User> users) {
         mUserAdapter = new UserAdapter(users,this);
         recyclerViewSearchResults.setAdapter(mUserAdapter);
+        configureEditTextSearch();
+    }
+
+    @Override
+    public void loadUsersFiltered(ArrayList<User> users) {
+        mUserAdapter.updateItems(users);
+    }
+
+    private void configureEditTextSearch() {
+        editTextSearch = findViewById(R.id.editTextSearch);
+        editTextSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                mPresenter.filterUsers(String.valueOf(charSequence));
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+            }
+        });
     }
 
     @Override

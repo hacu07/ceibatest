@@ -3,6 +3,7 @@ package co.com.ceiba.mobile.pruebadeingreso.userposts;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
+import co.com.ceiba.mobile.pruebadeingreso.R;
 import co.com.ceiba.mobile.pruebadeingreso.userposts.event.PostEvent;
 import co.com.ceiba.mobile.pruebadeingreso.userposts.model.PostInteractor;
 import co.com.ceiba.mobile.pruebadeingreso.userposts.model.PostInteractorClass;
@@ -50,7 +51,7 @@ public class PostPresenterClass implements PostPresenter{
                     mView.loadPosts(event.getPosts());
                     break;
                 default:
-                    mView.showMessage(event.getMessage());
+                    mView.showMessage(R.string.generic_error);
                     break;
             }
         }

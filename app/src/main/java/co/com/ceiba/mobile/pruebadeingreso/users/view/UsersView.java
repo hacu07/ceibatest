@@ -9,4 +9,7 @@ public interface UsersView {
     public void hideLoading();
     public void showMessage(int message);
     public void loadUsers(ArrayList<User> users);
+    public void loadUsersFiltered(ArrayList<User> users);
+
+    void showSnackbar(int list_is_empty);
 }
