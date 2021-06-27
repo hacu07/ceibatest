@@ -6,8 +6,8 @@ import android.content.Context;
 import java.util.ArrayList;
 
 import co.com.ceiba.mobile.pruebadeingreso.users.dto.User;
-import co.com.ceiba.mobile.pruebadeingreso.util.Constants;
-import co.com.ceiba.mobile.pruebadeingreso.util.SQLiteHelper;
+import co.com.ceiba.mobile.pruebadeingreso.utils.Constants;
+import co.com.ceiba.mobile.pruebadeingreso.utils.SQLiteHelper;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;

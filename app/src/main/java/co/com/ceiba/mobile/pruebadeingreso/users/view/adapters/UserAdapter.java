@@ -25,9 +25,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.user_list_item,parent,false);
-        return new ViewHolder(view);
+            View view = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.user_list_item,parent,false);
+            return new ViewHolder(view);
     }
 
     @Override
@@ -60,7 +60,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         }
 
         public void onUserClickListener(final OnUserClickListener mListener, final User user){
-            itemView.setOnClickListener(new View.OnClickListener() {
+            btn_view_post.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     mListener.onUserItemClick(user);

@@ -2,7 +2,7 @@ package co.com.ceiba.mobile.pruebadeingreso.users.event
 
 import co.com.ceiba.mobile.pruebadeingreso.R
 import co.com.ceiba.mobile.pruebadeingreso.users.dto.User
-import co.com.ceiba.mobile.pruebadeingreso.util.Constants;
+import co.com.ceiba.mobile.pruebadeingreso.utils.Constants;
 import java.io.Serializable
 import java.util.*
 

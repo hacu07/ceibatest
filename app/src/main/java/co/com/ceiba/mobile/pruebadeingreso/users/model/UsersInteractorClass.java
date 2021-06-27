@@ -12,7 +12,7 @@ import co.com.ceiba.mobile.pruebadeingreso.users.event.UserEvent;
 import co.com.ceiba.mobile.pruebadeingreso.users.model.dao.api.UsersAPIDao;
 import co.com.ceiba.mobile.pruebadeingreso.users.model.dao.api.UsersResponseCallback;
 import co.com.ceiba.mobile.pruebadeingreso.users.model.dao.db.UsersDBDao;
-import co.com.ceiba.mobile.pruebadeingreso.util.Constants;
+import co.com.ceiba.mobile.pruebadeingreso.utils.Constants;
 
 public class UsersInteractorClass implements UsersInteractor{
 

@@ -1,4 +1,4 @@
-package co.com.ceiba.mobile.pruebadeingreso.util;
+package co.com.ceiba.mobile.pruebadeingreso.utils;
 
 import co.com.ceiba.mobile.pruebadeingreso.users.dto.User;
 

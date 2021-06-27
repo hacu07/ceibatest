@@ -2,6 +2,7 @@ package co.com.ceiba.mobile.pruebadeingreso.users.view;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import co.com.ceiba.mobile.pruebadeingreso.R;
+import co.com.ceiba.mobile.pruebadeingreso.userposts.view.PostActivity;
 import co.com.ceiba.mobile.pruebadeingreso.users.UsersPresenter;
 import co.com.ceiba.mobile.pruebadeingreso.users.UsersPresenterClass;
 import co.com.ceiba.mobile.pruebadeingreso.users.dto.User;
@@ -78,6 +80,8 @@ public class MainActivity extends Activity implements UsersView, OnUserClickList
 
     @Override
     public void onUserItemClick(User user) {
-
+        Intent intent = new Intent(this, PostActivity.class);
+        intent.putExtra(User.class.getName(),user);
+        startActivity(intent);
     }
 }

@@ -3,13 +3,12 @@ package co.com.ceiba.mobile.pruebadeingreso.users.model.dao.api;
 import android.content.Context;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import co.com.ceiba.mobile.pruebadeingreso.R;
 import co.com.ceiba.mobile.pruebadeingreso.users.dto.User;
 import co.com.ceiba.mobile.pruebadeingreso.users.event.UserEvent;
-import co.com.ceiba.mobile.pruebadeingreso.util.Constants;
-import co.com.ceiba.mobile.pruebadeingreso.util.Util;
+import co.com.ceiba.mobile.pruebadeingreso.utils.Constants;
+import co.com.ceiba.mobile.pruebadeingreso.utils.Util;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

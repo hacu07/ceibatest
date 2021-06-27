@@ -1,4 +1,4 @@
-package co.com.ceiba.mobile.pruebadeingreso.util;
+package co.com.ceiba.mobile.pruebadeingreso.utils;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

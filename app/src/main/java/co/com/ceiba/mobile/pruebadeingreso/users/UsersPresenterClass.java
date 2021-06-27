@@ -13,7 +13,7 @@ import co.com.ceiba.mobile.pruebadeingreso.users.model.UsersInteractor;
 import co.com.ceiba.mobile.pruebadeingreso.users.model.UsersInteractorClass;
 import co.com.ceiba.mobile.pruebadeingreso.users.view.MainActivity;
 import co.com.ceiba.mobile.pruebadeingreso.users.view.UsersView;
-import co.com.ceiba.mobile.pruebadeingreso.util.Constants;
+import co.com.ceiba.mobile.pruebadeingreso.utils.Constants;
 
 public class UsersPresenterClass implements UsersPresenter{
     private UsersView mView = null;
