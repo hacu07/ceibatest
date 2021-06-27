@@ -13,6 +13,6 @@ data class User(
         val NAME = "name"
         val EMAIL = "email"
         val PHONE = "phone"
-        val TABLE_NAME = ""
+        val TABLE_NAME = "users"
     }
 }

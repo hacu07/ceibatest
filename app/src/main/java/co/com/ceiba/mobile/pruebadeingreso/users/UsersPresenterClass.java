@@ -46,7 +46,7 @@ public class UsersPresenterClass implements UsersPresenter{
         }
     }
 
-     @Subscribe
+    @Subscribe
     public void onUserEventListener(UserEvent event){
         if (mView != null){
             mView.hideLoading();

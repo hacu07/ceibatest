@@ -8,6 +8,6 @@ import java.util.*
 
 data class UserEvent(
         var typeEvent: Int = Constants.CONNECTION_ERROR,
-        val users: ArrayList<User>,
+        val users: ArrayList<User>?,
         val message: Int = R.string.CONNECTION_ERROR_MESSAGE
 ):Serializable

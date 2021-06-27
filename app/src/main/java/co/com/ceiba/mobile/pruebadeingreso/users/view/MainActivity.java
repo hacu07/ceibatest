@@ -13,11 +13,14 @@ import co.com.ceiba.mobile.pruebadeingreso.R;
 import co.com.ceiba.mobile.pruebadeingreso.users.UsersPresenter;
 import co.com.ceiba.mobile.pruebadeingreso.users.UsersPresenterClass;
 import co.com.ceiba.mobile.pruebadeingreso.users.dto.User;
+import co.com.ceiba.mobile.pruebadeingreso.users.view.adapters.OnUserClickListener;
+import co.com.ceiba.mobile.pruebadeingreso.users.view.adapters.UserAdapter;
 
-public class MainActivity extends Activity implements UsersView {
+public class MainActivity extends Activity implements UsersView, OnUserClickListener {
     ProgressDialog progressDialog;
     UsersPresenter mPresenter;
     RecyclerView recyclerViewSearchResults;
+    UserAdapter mUserAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +29,9 @@ public class MainActivity extends Activity implements UsersView {
 
         initView();
 
-        mPresenter = new UsersPresenterClass(this,this);
+        mPresenter = new UsersPresenterClass(this, this);
         mPresenter.onCreate();
+        mPresenter.getUsers();
     }
 
     private void initView() {
@@ -68,6 +72,12 @@ public class MainActivity extends Activity implements UsersView {
 
     @Override
     public void loadUsers(ArrayList<User> users) {
+        mUserAdapter = new UserAdapter(users,this);
+        recyclerViewSearchResults.setAdapter(mUserAdapter);
+    }
+
+    @Override
+    public void onUserItemClick(User user) {
 
     }
 }

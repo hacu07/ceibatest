@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 27
@@ -15,9 +14,7 @@ android {
     dataBinding {
         enabled = true
     }
-    realm {
-        syncEnabled = true;
-    }
+
     buildTypes {
         release {
             minifyEnabled false
